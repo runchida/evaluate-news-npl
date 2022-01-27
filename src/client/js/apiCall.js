@@ -10,10 +10,9 @@ export async function postTextToServer (url, dataToPost) {
     })
     try {
         const data = await rawData.json()
-        console.log(data.stories);
         Client.updateResult(data.stories)
     }
-    catch {
-        console.log('error')
+    catch(error) {
+        console.log(error)
     }
 }
