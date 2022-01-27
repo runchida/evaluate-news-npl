@@ -18,7 +18,7 @@ function onClick(event) {
 
 const postTextToServer = async (url, dataToPost) => {
     console.log('POST sent')
-    const rawStories = await fetch(url, {
+    const rawData = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -27,14 +27,21 @@ const postTextToServer = async (url, dataToPost) => {
         body: JSON.stringify(dataToPost)
     })
     try {
-        console.log(rawStories)
-        const stories = await rawStories.json()
-        console.log(stories);
-        for (let i = 0; i < stories.length; i++) {
-            console.log(stories[i])
-        }
+        const data = await rawData.json()
+        console.log(data.stories);
+        updateResult(data.stories)
     }
     catch {
         console.log('error')
+    }
+
+    function updateResult (stories) {
+        const storyList = document.createElement('ul')
+        for (let i = 0; i < stories.length; i++) {
+            const story = document.createElement('li')
+            story.innerHTML = `<a href='${stories[i].links.permalink}'>${stories[i].title}</a>`
+            storyList.appendChild(story)
+        }
+        document.getElementById('result').appendChild(storyList);
     }
 }

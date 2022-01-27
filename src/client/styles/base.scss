@@ -1,6 +1,17 @@
+$contrast-color: rgb(166, 255, 0);
+$less-contrast: rgb(230, 255, 206);
+
 body {
     background-color: black;
     color:rgb(230, 255, 206);
     width: 100%;
     text-align: center;
+}
+
+ul {
+    color: $contrast-color
+}
+
+a {
+    color: $less-contrast
 }

@@ -1,7 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-var aylienTextAPI = require('aylien_textapi');
+const dotenv = require('dotenv')
+dotenv.config();
 
 // constants for server and APIs
 const port = '8080'
@@ -19,10 +20,10 @@ const AylienNewsApi = require("aylien-news-api");
 const defaultClient = AylienNewsApi.ApiClient.instance;
 
 let app_id = defaultClient.authentications["app_id"];
-app_id.apiKey = '2f996113'
+app_id.apiKey = process.env.APP_ID
 
 let app_key = defaultClient.authentications["app_key"];
-app_key.apiKey = '4d8951f9af6610bb82d1a35ee82bd262'
+app_key.apiKey = process.env.API_KEY
 
 aylienApi = new AylienNewsApi.DefaultApi();
 
@@ -52,3 +53,19 @@ async function getToAylien(req, res) {
         }
     } )
 }
+
+let callback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+    } else {
+        console.log("API called successfully. Returned data: ");
+        console.log("========================================");
+        let stories = [];
+        for (var i = 0; i < 1; i++) {
+            stories.push({ titel: data.stories[i].title, link: data.stories[i].links.permalink })
+            console.log(data.stories[i].links.permalink);
+        }
+        console.log("========================================");
+        response.send()
+    }
+};
