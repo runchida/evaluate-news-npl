@@ -5,6 +5,11 @@
         <title>Test</title>
     </head>
     <body>
-        <input id="news" type="text" placeholder="Your text here please" />
+        <form>
+            <label for="news">Your message: </label>
+            <input id="news" type="text" placeholder="Your text here please" required autocomplete="off" />
+            <button id="submit">Evaluate</button>
+        </form>
+        <div id="result"></div>
     </body>
 </html>

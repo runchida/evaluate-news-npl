@@ -1,0 +1,23 @@
+$contrast-color: rgb(166, 255, 0);
+$less-contrast: rgb(230, 255, 206);
+
+#news{
+    background-color: black;
+}
+
+form {
+    display: block;
+    margin: auto;
+    padding: 20px;
+    width: fit-content;
+}
+
+#news {
+    color: $less-contrast;
+}
+
+#submit {
+    background-color: black;
+    color: $contrast-color;
+}
+
