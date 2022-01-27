@@ -1,7 +1,9 @@
 alert('client/index.js linked')
 
-import {testappjs} from './js/app'
 import './styles/base.scss'
 import './styles/form.scss'
+import {onClick} from './js/formHandler'
+import {postTextToServer} from './js/apiCall'
+import {updateResult} from './js/updateUI'
 
-testappjs()
+export {onClick, postTextToServer, updateResult}

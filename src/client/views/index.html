@@ -5,10 +5,10 @@
         <title>Test</title>
     </head>
     <body>
-        <form>
+        <form onsubmit="return Client.onClick(event)">
             <label for="news">What's happening: </label>
             <input id="news" type="text" placeholder="Mothership to Earth" required autocomplete="off" />
-            <button id="submit">Spy on human</button>
+            <button id="submit" onsubmit="return Client.onClick(event)" onclick="return Client.onClick(event)">Spy on human</button>
         </form>
         <div id="result"></div>
     </body>

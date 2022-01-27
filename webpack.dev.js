@@ -6,6 +6,8 @@ module.exports = {
     entry: '/src/client/index.js',
     mode: 'development',
     output: {
+        libraryTarget: 'var',
+        library: 'Client',
         clean: true,
     },
     stats: 'verbose',
