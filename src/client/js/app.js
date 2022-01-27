@@ -8,17 +8,17 @@ button.addEventListener('click', onClick)
 function onClick(event) {
     event.preventDefault()
     const text = document.getElementById('news')
-    if(text.value != '') {
+    if (text.value != '') {
         postTextToServer('/mothership', { text: text.value })
-    } 
+    }
     else {
         document.getElementById('result').innerHTML = 'No message to send'
-    } 
+    }
 }
 
 const postTextToServer = async (url, dataToPost) => {
     console.log('POST sent')
-    const postData = await fetch(url, {
+    const rawStories = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -26,5 +26,15 @@ const postTextToServer = async (url, dataToPost) => {
         },
         body: JSON.stringify(dataToPost)
     })
-    .then 
+    try {
+        console.log(rawStories)
+        const stories = await rawStories.json()
+        console.log(stories);
+        for (let i = 0; i < stories.length; i++) {
+            console.log(stories[i])
+        }
+    }
+    catch {
+        console.log('error')
+    }
 }
