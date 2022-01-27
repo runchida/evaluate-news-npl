@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 dotenv.config();
 
 // constants for server and APIs
-const port = '8080'
+const port = '3000'
 
 // Initiate services
 const app = express()

@@ -1,5 +1,3 @@
-alert('client/index.js linked')
-
 import './styles/base.scss'
 import './styles/form.scss'
 import {onClick} from './js/formHandler'
