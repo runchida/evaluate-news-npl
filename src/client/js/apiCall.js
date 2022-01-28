@@ -9,6 +9,7 @@ export async function postTextToServer (url, dataToPost) {
         body: JSON.stringify(dataToPost)
     })
     try {
+        console.log(rawData)
         const data = await rawData.json()
         Client.updateResult(data.stories)
     }

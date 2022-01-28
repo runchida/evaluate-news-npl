@@ -30,7 +30,8 @@ module.exports = {
             filename: "./index.html",
         }),
         new WorkboxPlugin.InjectManifest({
-            swSrc: '/serviceWorker.js'
+            swSrc: "./service-worker.js",
+            swDest: "./serviceWorker.js"
         })
     ]
 }
