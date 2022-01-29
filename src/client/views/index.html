@@ -7,7 +7,7 @@
     <body>
         <form onsubmit="return Client.onClick(event)">
             <label for="news">What's happening: </label>
-            <input id="news" type="text" placeholder="Mothership to Earth" required autocomplete="off" />
+            <input id="news" type="text" placeholder="Mothership to Earth" accept-charset="character_set" required autocomplete="off" />
             <button id="submit" onsubmit="return Client.onClick(event)" onclick="return Client.onClick(event)">Spy on human</button>
         </form>
         <div id="result"></div>

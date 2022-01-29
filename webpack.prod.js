@@ -29,9 +29,9 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
-        new WorkboxPlugin.InjectManifest({
-            swSrc: "./service-worker.js",
-            swDest: "./serviceWorker.js"
-        })
+        // new WorkboxPlugin.InjectManifest({
+        //     swSrc: "./service-worker.js",
+        //     swDest: "./serviceWorker.js"
+        // })
     ]
 }
