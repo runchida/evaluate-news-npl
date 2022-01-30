@@ -38,13 +38,8 @@ async function onPost(req, res) {
 
     let formdata = new FormData();
     formdata.append('key', process.env.API_KEY);
-
-    // meaningcloud responses correctly
-    // formdata.append('txt', "Hello, this is a text");
-    // response with error 201
     formdata.append('txt', req.body);
     formdata.append('lang', 'auto');
-    console.log(formdata)
 
     let config = {
         method: 'post',
@@ -57,24 +52,9 @@ async function onPost(req, res) {
       axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
+        res.send(JSON.stringify(response.data))
       })
       .catch(function (error) {
         console.log(error);
       });      
 }
-
-let callback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-    } else {
-        console.log("API called successfully. Returned data: ");
-        console.log("========================================");
-        let stories = [];
-        for (var i = 0; i < 1; i++) {
-            stories.push({ titel: data.stories[i].title, link: data.stories[i].links.permalink })
-            console.log(data.stories[i].links.permalink);
-        }
-        console.log("========================================");
-        response.send()
-    }
-};

@@ -1,4 +1,4 @@
-export async function postTextToServer (url, dataToPost) {
+export async function postTextToServer(url, dataToPost) {
     console.log('POST sent')
     console.log(dataToPost)
     const rawData = await fetch(url, {
@@ -13,9 +13,10 @@ export async function postTextToServer (url, dataToPost) {
     try {
         console.log(rawData)
         const data = await rawData.json()
-        //Client.updateResult(data.stories)
+        console.log(data)
+        Client.updateResult(data)
     }
-    catch(error) {
+    catch (error) {
         console.log(error)
     }
 }
