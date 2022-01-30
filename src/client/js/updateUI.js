@@ -1,7 +1,7 @@
 export function updateResult(result) {
+    console.log(result);
     document.getElementById('result').innerHTML = ''
     if (result.status.code == '0') {
-        console.log('changing text')
         const docFrag = document.createDocumentFragment()
         const positivity = document.createElement('div')
         positivity.innerHTML = `Rating on the sentiment: ${result.score_tag}`
@@ -15,6 +15,10 @@ export function updateResult(result) {
         document.getElementById('result').appendChild(docFrag)
     }
     else {
-        document.getElementById('result').innerHTML = 'Something went wrong'
+        document.getElementById('result').innerHTML = 'Something went wrong with the text or API'
     }
+}
+
+export function showError() {
+    document.getElementById('result').innerHTML = 'Service Worker to Major Tom! Check your connection!'
 }

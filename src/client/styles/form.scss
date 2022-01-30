@@ -1,23 +1,24 @@
-$contrast-color: rgb(166, 255, 0);
-$less-contrast: rgb(230, 255, 206);
+$contrast-color: rgb(0, 119, 179);
+$less-contrast: rgb(26, 178, 255);
+$background: rgb(204, 255, 255);
 
-#news{
-    background-color: black;
-}
 
-form {
-    display: block;
-    margin: auto;
-    padding: 20px;
-    width: fit-content;
-}
-
-#news {
+#text{
     color: $less-contrast;
 }
 
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    width: fit-content;
+    gap: 10px;
+}
+
 #submit {
-    background-color: black;
     color: $contrast-color;
 }
 

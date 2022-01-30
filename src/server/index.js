@@ -34,7 +34,6 @@ app.post('/mothership', onPost)
 
 async function onPost(req, res) {
     console.log('POST incoming: ')
-    console.log(typeof "asdf")
 
     let formdata = new FormData();
     formdata.append('key', process.env.API_KEY);
@@ -51,7 +50,7 @@ async function onPost(req, res) {
       };
       axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
+        console.log(response)
         res.send(JSON.stringify(response.data))
       })
       .catch(function (error) {

@@ -2,9 +2,9 @@ import './styles/base.scss'
 import './styles/form.scss'
 import { onClick } from './js/formHandler'
 import { postTextToServer } from './js/apiCall'
-import { updateResult } from './js/updateUI'
+import { updateResult, showError} from './js/updateUI'
 
-export { onClick, postTextToServer, updateResult }
+export { onClick, postTextToServer, updateResult, showError }
 
 console.log('Check service worker');
 // Check that service workers are supported

@@ -1,9 +1,11 @@
-$contrast-color: rgb(166, 255, 0);
-$less-contrast: rgb(230, 255, 206);
+$contrast-color: rgb(0, 119, 179);
+$less-contrast: rgb(230, 255, 230);
+$background: rgb(255, 128, 255);
+
 
 body {
-    background-color: black;
-    color:rgb(230, 255, 206);
+    background-color: $background;
+    color: $contrast-color;
     width: 100%;
     text-align: center;
 }

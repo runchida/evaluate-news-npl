@@ -2,18 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>I'm sentimental</title>
     </head>
     <body>
         <form onsubmit="return Client.onClick(event)">
-            <label for="news">What's happening: </label>
-            <input id="news" type="text" placeholder="Mothership to Earth" accept-charset="character_set" required autocomplete="off" />
-            <button id="submit" onsubmit="return Client.onClick(event)" onclick="return Client.onClick(event)">Spy on human</button>
+            <label for="text">Input your text: </label>
+            <textarea id="text" placeholder="I'm sentimental. So I walk in the rain..." accept-charset="character_set" required autocomplete="off"></textarea>
+            <button id="submit" onsubmit="return Client.onClick(event)" onclick="return Client.onClick(event)">Get sentimental</button>
         </form>
-        <div id="result">
-            <div id="positivity"></div>
-            <div id="agreement"></div>
-            <div id="irony"></div>
-        </div>
+        <div id="result"></div>
     </body>
 </html>

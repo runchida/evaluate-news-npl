@@ -1,6 +1,5 @@
 export async function postTextToServer(url, dataToPost) {
     console.log('POST sent')
-    console.log(dataToPost)
     const rawData = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -12,9 +11,12 @@ export async function postTextToServer(url, dataToPost) {
     })
     try {
         console.log(rawData)
-        const data = await rawData.json()
-        console.log(data)
-        Client.updateResult(data)
+        if (rawData.status == "200") {
+            const data = await rawData.json()
+            Client.updateResult(data)
+        } else {
+            Client.showError()
+        }
     }
     catch (error) {
         console.log(error)

@@ -1,8 +1,7 @@
 export function onClick(event) {
     event.preventDefault()
-    const text = document.getElementById('news')
+    const text = document.getElementById('text')
     if (text.value != '') {
-        console.log(text.value)
         Client.postTextToServer('/mothership', text.value)
     }
     else {
